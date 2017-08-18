@@ -2,7 +2,7 @@
 
 function compare_collections(collection_a, collection_b) {
   //在这里写入代码
-  let flag = [];
+/*  let flag = [];
   for(let i = 0; i < collection_a.length; i++){
       if(collection_a[i] === collection_b[i]){
           flag.push(1);
@@ -15,7 +15,13 @@ function compare_collections(collection_a, collection_b) {
           return false;
       }
   }
-  return true;
+  return true;*/
+
+  if(collection_b.toString() === collection_a.toString()){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 module.exports = compare_collections;

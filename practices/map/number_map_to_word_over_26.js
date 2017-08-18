@@ -14,11 +14,14 @@ function changeToLetter(num){
     return result;
 }
 var number_map_to_word_over_26 = function(collection){
-    let result = [];
+/*    let result = [];
     for(let item of collection){
         result.push(changeToLetter(item));
-    }
-  return ['a','m','aa','ad','y','aa'];
+    }*/
+  let result = collection.map(ele => {
+    return changeToLetter(ele);
+  });
+  return result;
 };
 
 module.exports = number_map_to_word_over_26;

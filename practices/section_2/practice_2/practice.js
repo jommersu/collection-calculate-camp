@@ -1,4 +1,4 @@
-function find(col , ch){
+/*function find(col , ch){
     for(let item of col){
         if(item.key === ch){
             return item;
@@ -17,7 +17,7 @@ function sum(collection){
          }
      }
      return result;
-     
+
 }
 function split(item){
     let arr = item.split("-");
@@ -39,12 +39,22 @@ function expand(collection){
         }
     }
     return result;
-}
+}*/
 function count_same_elements(collection) {
   //在这里写入代码
-  let result = [];
+/*  let result = [];
   let expandedCol = expand(collection);
   result = sum(expandedCol);
+  */
+  let result = [];
+  collection.forEach(ele => {
+    if(ele.includes("-")){
+      let arr = ele.split("-");
+      result.push({key: arr[0], count: parseInt(arr[1])});
+    }else if(!result.find(item => item.key === ele)){
+      result.push({key: ele , count: collection.filter(element => element === ele ).length});
+    }
+  });
   return result;
 }
 
